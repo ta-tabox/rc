@@ -14,10 +14,10 @@ nnoremap : ;
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 
-nnoremap d "_d
-nnoremap D "_D
-nnoremap s "_s
-nnoremap S "_S
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
 
 noremap <C-j> 5j
 noremap <C-k> 5k
