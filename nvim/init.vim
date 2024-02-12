@@ -1,18 +1,24 @@
 filetype indent on
-syntax on "コード色分け
 let mapleader="\<Space>"
+        
+"vscode起動時にはスキップする設定
+if !exists('g:vscode')
+    syntax on "コード色分け
+    set number "行番号
+    set title "編集中のファイル名
+    set showmatch "括弧入力時の対応する括弧を表示
+    set showcmd "コマンドを画面の再下行に表示
+    set background=dark
+    set tabstop=4 "タブのスペースを4に
+    set shiftwidth=4 "インデントのスペースを4に
+    set expandtab "入力したタブをスペースに置き換え
+    set smartindent "オートインデント
+    set laststatus=2
+    set ruler "カーソルの行列目を表示（ルーラー）
+end
+
 
 "###表示設定###
-set number "行番号
-set title "編集中のファイル名
-set showmatch "括弧入力時の対応する括弧を表示
-set showcmd "コマンドを画面の再下行に表示
-set background=dark
-set tabstop=4 "インデントのスペースを4に
-set expandtab
-set smartindent "オートインデント
-set laststatus=2
-set ruler "カーソルの行列目を表示（ルーラー）
 set history=200 "command history
 set backspace=indent,eol,start "バックスペースの対象の設定
 
@@ -70,12 +76,12 @@ nnoremap <silent> ]B :blast<CR>
 
 " 挿入モード→ノーマルモードに変わった際に英字にする設定 jk, <Esc>, <C-[>全てに対応
 if has('mac')
-  set ttimeoutlen=1
-  let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
-  augroup MyIMEGroup
-    autocmd!
-    autocmd InsertLeave * :call system(g:imeoff)
-  augroup END
+    set ttimeoutlen=1
+    let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
+    augroup MyIMEGroup
+        autocmd!
+        autocmd InsertLeave * :call system(g:imeoff)
+    augroup END
 endif
 
 "###クリップボード連結###
