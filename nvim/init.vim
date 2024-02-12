@@ -8,7 +8,6 @@ if !exists('g:vscode')
     set title "編集中のファイル名
     set showmatch "括弧入力時の対応する括弧を表示
     set showcmd "コマンドを画面の再下行に表示
-    set background=dark
     set tabstop=4 "タブのスペースを4に
     set shiftwidth=4 "インデントのスペースを4に
     set expandtab "入力したタブをスペースに置き換え
@@ -87,3 +86,9 @@ endif
 "###クリップボード連結###
 set clipboard=unnamed
 
+"# luaで設定
+"neovimのメッセージを英語にする
+lua << EOF
+    vim.opt.langmenu = 'en_US.UTF-8'
+    vim.api.nvim_exec('language message en_US.UTF-8', true)
+EOF
